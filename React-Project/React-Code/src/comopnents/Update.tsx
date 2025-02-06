@@ -6,12 +6,12 @@ import {
     Box,
     TextField,
 } from "@mui/material";
-import { url, userCotext } from "./appLayot";
+import { url, UserCotext } from "./appLayot";
 import axios from "axios";
 import User from "../types/User";
 
 const Update = () => {
-    const {user, userDispatch} = useContext(userCotext);
+    const {user, userDispatch} = useContext(UserCotext);
     const [isLogin, setIsLogin] = useState(false);
     const [open, setOpen] = useState(false);
     const [updatedUser, setUpdatedUser] = useState<User>(user);

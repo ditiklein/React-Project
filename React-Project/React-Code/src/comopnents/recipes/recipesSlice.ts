@@ -40,7 +40,7 @@ export const deleteRecipe = createAsyncThunk(
             return recipeId;
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                return thunkApi.rejectWithValue(error.message); // מחזירים טקסט במקום אובייקט
+                return thunkApi.rejectWithValue(error.message);
             }
             return thunkApi.rejectWithValue('Failed to delete recipe');
         }
@@ -84,7 +84,6 @@ const recipesSlice = createSlice({
                 state.recipes.push(action.payload); 
 
             })
-            // כאשר ההוספה נכשלת
             .addCase(AddRecipes.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string || action.error.message || 'Failed to add recipe';
@@ -92,7 +91,5 @@ const recipesSlice = createSlice({
         }
 
     });
-
-
 export const selectRecipes = (state: Rootstore) => state.recipes
 export default recipesSlice.reducer;

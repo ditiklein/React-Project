@@ -2,7 +2,7 @@ import { Button, Box, TextField, Typography } from "@mui/material";
 import { useFieldArray, Control, FieldErrors, UseFormRegister } from "react-hook-form";
 import Recipe from "../../../types/Recipe";
 interface DynamicFieldArrayProps {
-    name: "products" | "ingredients"; 
+    name :"products" | "ingredients" ; 
     label: string;
     control: Control<Recipe>;
     register: UseFormRegister<Recipe>;
@@ -11,8 +11,7 @@ interface DynamicFieldArrayProps {
   
 
 const DynamicFieldArray = ({ name, label, control, register, errors }: DynamicFieldArrayProps) => {
-  const { fields, append, remove } = useFieldArray({ control,  name,  // זה מעודף מ name: as never
-  });
+  const { fields, append, remove } = useFieldArray({ control,  name } as  never);
 
   return (
     <Box sx={{ marginTop: 2 }}>

@@ -11,7 +11,7 @@ export const Router = createBrowserRouter([
     element: <AppLayot></AppLayot>,
     children: [
       { path: 'update', element: <Update></Update> },
-      { path: "recipes", element: <RecipesList />,
+      { path: "recipes", element: <RecipesList   />,
         children:[{path:":id",element:<ShowRecipe></ShowRecipe>}]
        },
       { path: "home", element: <Home/> },

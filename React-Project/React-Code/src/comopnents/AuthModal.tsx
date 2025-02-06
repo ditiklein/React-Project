@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useRef, useState } from "react";
-import { url, userCotext } from "./appLayot";
+import { url, UserCotext } from "./appLayot";
 import axios from "axios";
 import { Box, Button, Modal, TextField } from "@mui/material";
 import ErrorMessage from "./Error";
@@ -12,7 +12,7 @@ interface AuthModalProps {
 }
 const AuthModal = ({ open, setOpen, mode, setIsLogin }: AuthModalProps) => {
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-    const { userDispatch } = useContext(userCotext);
+    const { userDispatch } = useContext(UserCotext);
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordref = useRef<HTMLInputElement>(null);
 
@@ -77,8 +77,6 @@ const AuthModal = ({ open, setOpen, mode, setIsLogin }: AuthModalProps) => {
             setTimeout(() => {
                 setErrorMessage(null);
             }, 5000);
-        
-        
         }
         finally {
             setOpen(false);
@@ -94,8 +92,7 @@ const AuthModal = ({ open, setOpen, mode, setIsLogin }: AuthModalProps) => {
                 </Box>
               
             )  }
-
-            <Modal open={open}  onClose={() => setOpen(false)} 
+           <Modal open={open}  onClose={() => setOpen(false)} 
             >
                 <Box sx={style}>
                     <form onSubmit={handleuser}>

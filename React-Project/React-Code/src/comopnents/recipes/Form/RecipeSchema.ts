@@ -1,9 +1,6 @@
 import * as yup from "yup";
 
 const schema = yup.object({
-  id: yup.number().optional(), // הוספת שדה id כ-optional
-  authorId: yup.number().optional(), // הוספת שדה authorId כ-optional
-
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
   products: yup.array().of(yup.string().required("Product name is required")).min(1, "At least one product is required"),

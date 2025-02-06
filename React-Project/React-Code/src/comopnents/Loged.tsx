@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Avatar, Stack, Typography } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
 import Update from "./Update";
-import { userCotext } from "./appLayot";
+import { UserCotext } from "./appLayot";
 
 const Loged = () => {
-    const {user} = useContext(userCotext);
+    const {user} = useContext(UserCotext);
 
     return (
         <Stack direction="row" spacing={2} alignItems="center">

@@ -42,8 +42,7 @@ router.post('/', authMiddleware, (req, res) => {
     res.status(201).json({ message: "Recipe added", recipe: newRecipe });
 });
 router.delete('/', authMiddleware, (req, res) => {
-    console.log('DELETE request received!'); // בדיקה ראשונית
-
+    console.log('DELETE request received!'); 
     try {
         const id = parseInt(req.body.id);
 
@@ -57,6 +56,7 @@ router.delete('/', authMiddleware, (req, res) => {
         const recipe = db.recipes.find(recipe => recipe.id === id);
         if (!recipe) {
             console.log('Recipe not found:', id); 
+
             return res.status(404).json({ message: "Recipe not found" });
         }
 

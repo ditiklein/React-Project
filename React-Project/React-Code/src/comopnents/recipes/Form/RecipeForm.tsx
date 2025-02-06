@@ -3,13 +3,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Recipe from "../../../types/Recipe";
 import { useContext } from "react";
-import { userCotext } from "../../appLayot";
+import { UserCotext } from "../../appLayot";
 import schema from "./RecipeSchema";
 import DynamicFieldArray from "./DynamicFileds";
 
 const HookForm = ({ addToList }: { addToList: (data: Recipe) => void }) => {
-  const { user } = useContext(userCotext);
-
+  const { user } = useContext(UserCotext);
   const {
     formState: { errors },
     register,
